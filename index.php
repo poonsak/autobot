@@ -61,7 +61,7 @@ if(!is_null($events['events'])){
                 break;
             
                 case 'audio':
-                    //Reply video
+                    //Reply audio
                     $messageID=$event['message']['id'];
 
                     // // Create Video file on server
@@ -74,9 +74,15 @@ if(!is_null($events['events'])){
                     $respMessage='Hello, your Audio ID is ' .$messageID;
                 break;
 
+                case 'location':
+                    //Reply location
+                    $messageID=$event['message']['address'];
+
+                    $respMessage='Hello, your Location is ' .$messageID;
+                break;
 
                  default:
-                     $respMessage='Please send text, image,sticker ,video ,audio only';
+                     $respMessage='Please send text, image,sticker ,video ,audio , Location only';
                  break;
 
 
