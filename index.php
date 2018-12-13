@@ -31,6 +31,7 @@ if(!is_null($events['events'])){
                 case 'text':
                     //Reply message
                     $respMessage='Hello, your message is ' .$event['message']['text'];
+                    $correctmessage = $event['message']['text'];
                     // $respMessage='Hello, your UserID is ' .$event['source']['userId'];
                     $pushMessage='Hello, send by you ID is '.$event['source']['userId'];
                     
@@ -46,7 +47,7 @@ if(!is_null($events['events'])){
             $response=$bot->replyMessage($replyToken,$textMessageBuilder);
             // $response=$bot->pushMessage('U26068722829d8ddbf7acf39a1fe1df3d',$textMessageBuilder1);
 
-            if($textMessageBuilder=='ryu'){
+            if($correctmessage=='Ryu'){
                 $response=$bot->pushMessage('Ua8af9e53b97d01b7402318697e3a425c',$ryu_message);
             }
             else{
