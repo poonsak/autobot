@@ -51,7 +51,7 @@ if(!is_null($events['events'])){
 
                     //Create Video file on server
                     $fileID = $event['message']['id'];
-                    $response=$bot->getMessageContent(@fileID);
+                    $response=$bot->getMessageContent($fileID);
                     $fileName='linebot.mp4';
                     $file=fopen($fileName, 'w');
                     fwrite ($file,$response->getRawBody);
