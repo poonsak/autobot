@@ -30,8 +30,8 @@ if(!is_null($events['events'])){
 
                 case 'text':
                     //Reply message
-                    // $respMessage='Hello, your message is ' .$event['message']['text'];
-                    $respMessage='Hello, your UserID is ' .$event['source']['userId'];
+                    $respMessage='Hello, your message is ' .$event['message']['text'];
+                    // $respMessage='Hello, your UserID is ' .$event['source']['userId'];
                     $pushMessage='Hello, send by you ID'.$event['source']['userId'];
                     
                    
