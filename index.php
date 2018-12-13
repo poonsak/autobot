@@ -31,70 +31,15 @@ if(!is_null($events['events'])){
                 case 'text':
                     //Reply message
                     // $respMessage='Hello, your message is ' .$event['message']['text'];
-                    $respMessage='Hello, your UserID is ' .$event['source']['userId'];
-
+                    $respMessage='Hello, send by you ID';
                    
                 break;
-
-                case 'image':
-                    //Reply image
-                    $messageID=$event['message']['id'];
-                    $respMessage='Hello, your image ID is ' .$messageID;
-                break;
-               
-
-                case 'sticker':
-                    //Reply sticker
-                    $messageID=$event['message']['packageId'];
-                    $respMessage='Hello, your Sticker Package ID is ' .$messageID;
-                 break;
-                 
-                 case 'video':
-                    //Reply video
-                    $messageID=$event['message']['id'];
-
-                    // // Create Video file on server
-                    // $fileID = $event['message']['id'];
-                    // $response=$bot -> getMessageContent($fileID);
-                    // $fileName='linebot.mp4';
-                    // $file=fopen($fileName, 'w');
-                    // fwrite($file, $response->getRawBody());
-
-                    $respMessage='Hello, your Video ID is ' .$messageID;
-                break;
-            
-                case 'audio':
-                    //Reply audio
-                    $messageID=$event['message']['id'];
-
-                    // // Create Video file on server
-                    // $fileID = $event['message']['id'];
-                    // $response=$bot -> getMessageContent($fileID);
-                    // $fileName='linebot.m4a';
-                    // $file=fopen($fileName, 'w');
-                    // fwrite($file, $response->getRawBody());
-
-                    $respMessage='Hello, your Audio ID is ' .$messageID;
-                break;
-
-                case 'location':
-                    //Reply location
-                    $messageID=$event['message']['addresss'];
-
-                    $respMessage='Hello, your Location is ' .$messageID;
-                break;
-
-                 default:
-                     $respMessage='Please send text, image,sticker ,video ,audio , Location only';
-                 break;
-
-
 
             }
             $httpClient=new CurlHTTPClient($channel_token);
             $bot=new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             $textMessageBuilder=new TextMessageBuilder($respMessage);
-            $response=$bot->replyMessage($replyToken,$textMessageBuilder);
+            $response=$bot->pushMessage('U26068722829d8ddbf7acf39a1fe1df3d',$textMessageBuilder);
         }
     }
 }
