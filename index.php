@@ -22,8 +22,8 @@ if(!is_null($events['events'])){
 
              //Get replyToken
             //  $replyToken=$event['replyToken'];
-            //  $userId = $event['source']['userId'];
-             $replyToken = $event['source']['userId'];
+             $userId = $event['source']['userId'];
+             $replyToken = $userId;
              
 
             switch($event['message']['type']){
