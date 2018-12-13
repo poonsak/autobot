@@ -31,7 +31,9 @@ if(!is_null($events['events'])){
                 case 'text':
                     //Reply message
                     // $respMessage='Hello, your message is ' .$event['message']['text'];
-                    $respMessage='Hello, send by you ID';
+                    $respMessage='Hello, your UserID is ' .$event['source']['userId'];
+                    $pushMessage='Hello, send by you ID'.$event['source']['userId'];
+                    
                    
                 break;
 
@@ -39,7 +41,9 @@ if(!is_null($events['events'])){
             $httpClient=new CurlHTTPClient($channel_token);
             $bot=new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             $textMessageBuilder=new TextMessageBuilder($respMessage);
-            $response=$bot->pushMessage('U26068722829d8ddbf7acf39a1fe1df3d',$textMessageBuilder);
+            $textMessageBuilder1=new TextMessageBuilder($respMessage);
+            $response=$bot->replyMessage($replyToken,$textMessageBuilder);
+            $response=$bot->pushMessage('U26068722829d8ddbf7acf39a1fe1df3d',$textMessageBuilder1);
         }
     }
 }
