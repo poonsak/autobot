@@ -1,10 +1,11 @@
 <?php
 require_once('./vendor/autoload.php');
 
+
 //Namespace
-user \LINE\LINEBot\HTTPClient\CurlHTTPClient;
-user \LINE\LINEBot;
-user \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
+use \LINE\LINEBot;
+use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
 $channel_token =
 'mgfm1Bp+N7dJOqZP59o2t3n42y9hZ/S/gpbP4/XPSUFFRCsyiHwdxiyOQBoiBjPmKBC+hgF1X+6axLs88EHCpPSsqp4o+iv8qVameG09Uu
@@ -40,4 +41,4 @@ if(!is_null($events['events'])){
 
 echo "OK";
 
-?>
+
