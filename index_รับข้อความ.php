@@ -17,14 +17,14 @@ $events = json_decode($content, true);
 if(!is_null($events['events'])){
     //Loop through each event
     foreach($events['events']as $event){
+        
         //Line API send a lot of event type , we interested un message only.
         if($event['type']=='message'){
             switch($event['message']['type']){
-
-                 //Get replyToken
-                 $replyToken=$event['replyToken'];
-
                 case 'text':
+                    //Get replyToken
+                    $replyToken=$event['replyToken'];
+
                     //Reply message
                     $respMessage='Hello, your message is ' .$event['message']['text'];
 
