@@ -40,13 +40,29 @@ if(!is_null($events['events'])){
                
 
                 case 'sticker':
-                     //Reply sticker
-                     $messageID=$event['message']['packageId'];
-                     $respMessage='Hello, your Sticker Package ID is ' .$messageID;
+                    //Reply sticker
+                    $messageID=$event['message']['packageId'];
+                    $respMessage='Hello, your Sticker Package ID is ' .$messageID;
                  break;
                  
+                 case 'video':
+                    //Reply video
+                    $messageID=$event['message']['id'];
+
+                    //Create Video file on server
+                    $fileID = $event['message']['id'];
+                    $response=$bot->getMessageContent(@fileID);
+                    $fileName='linebot.mp4';
+                    $file=fopen($fileName, 'w');
+                    fwrite ($file,$response->getRawBody);
+
+                    $respMessage='Hello, your Video ID is ' .$messageID;
+                break;
+            
+
+
                  default:
-                     $respMessage='Please send text, image,sticker only';
+                     $respMessage='Please send text, image,sticker ,video only';
                  break;
 
 
