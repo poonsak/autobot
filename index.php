@@ -64,12 +64,12 @@ if(!is_null($events['events'])){
                     //Reply video
                     $messageID=$event['message']['id'];
 
-                    // Create Video file on server
-                    $fileID = $event['message']['id'];
-                    $response=$bot -> getMessageContent($fileID);
-                    $fileName='linebot.m4a';
-                    $file=fopen($fileName, 'w');
-                    fwrite($file, $response->getRawBody());
+                    // // Create Video file on server
+                    // $fileID = $event['message']['id'];
+                    // $response=$bot -> getMessageContent($fileID);
+                    // $fileName='linebot.m4a';
+                    // $file=fopen($fileName, 'w');
+                    // fwrite($file, $response->getRawBody());
 
                     $respMessage='Hello, your Audio ID is ' .$messageID;
                 break;
