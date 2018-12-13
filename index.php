@@ -22,6 +22,7 @@ if(!is_null($events['events'])){
 
              //Get replyToken
              $replyToken=$event['replyToken'];
+             
 
             switch($event['message']['type']){
 
@@ -49,7 +50,7 @@ if(!is_null($events['events'])){
                     //Reply video
                     $messageID=$event['message']['id'];
 
-                    //Create Video file on server
+                    // // Create Video file on server
                     // $fileID = $event['message']['id'];
                     // $response=$bot -> getMessageContent($fileID);
                     // $fileName='linebot.mp4';
@@ -59,10 +60,23 @@ if(!is_null($events['events'])){
                     $respMessage='Hello, your Video ID is ' .$messageID;
                 break;
             
+                case 'audio':
+                    //Reply video
+                    $messageID=$event['message']['id'];
+
+                    // Create Video file on server
+                    $fileID = $event['message']['id'];
+                    $response=$bot -> getMessageContent($fileID);
+                    $fileName='linebot.m4a';
+                    $file=fopen($fileName, 'w');
+                    fwrite($file, $response->getRawBody());
+
+                    $respMessage='Hello, your Audio ID is ' .$messageID;
+                break;
 
 
                  default:
-                     $respMessage='Please send text, image,sticker ,video only';
+                     $respMessage='Please send text, image,sticker ,video ,audio only';
                  break;
 
 
