@@ -41,7 +41,7 @@ if(!is_null($events['events'])){
             $httpClient=new CurlHTTPClient($channel_token);
             $bot=new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             $textMessageBuilder=new TextMessageBuilder($respMessage);
-            $textMessageBuilder1=new TextMessageBuilder($respMessage);
+            $textMessageBuilder1=new TextMessageBuilder($pushMessage);
             $response=$bot->replyMessage($replyToken,$textMessageBuilder);
             $response=$bot->pushMessage('U26068722829d8ddbf7acf39a1fe1df3d',$textMessageBuilder1);
         }
