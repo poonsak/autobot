@@ -22,13 +22,15 @@ if(!is_null($events['events'])){
 
              //Get replyToken
              $replyToken=$event['replyToken'];
+             $userId = $event['source']['userId'];
              
 
             switch($event['message']['type']){
 
                 case 'text':
                     //Reply message
-                    $respMessage='Hello, your message is ' .$event['message']['text'];
+                    // $respMessage='Hello, your message is ' .$event['message']['text'];
+                    $respMessage='Hello, your UserID is ' .$event['source']['userId'];
 
                    
                 break;
