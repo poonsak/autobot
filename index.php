@@ -44,10 +44,13 @@ if(!is_null($events['events'])){
             $textMessageBuilder1=new TextMessageBuilder($pushMessage);
             $ryu_message=new TextMessageBuilder('Hello Ryu has some one post ryu to line bot');
             $response=$bot->replyMessage($replyToken,$textMessageBuilder);
-            $response=$bot->pushMessage('U26068722829d8ddbf7acf39a1fe1df3d',$textMessageBuilder1);
+            // $response=$bot->pushMessage('U26068722829d8ddbf7acf39a1fe1df3d',$textMessageBuilder1);
 
             if($textMessageBuilder=='ryu'){
                 $response=$bot->pushMessage('Ua8af9e53b97d01b7402318697e3a425c',$ryu_message);
+            }
+            else{
+                $response=$bot->pushMessage('U26068722829d8ddbf7acf39a1fe1df3d',$textMessageBuilder1);
             }
         }
     }
