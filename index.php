@@ -37,10 +37,19 @@ if(!is_null($events['events'])){
                     $messageID=$event['message']['id'];
                     $respMessage='Hello, your image ID is ' .$messageID;
                 break;
-                
-                default:
-                    $respMessage='Please send image only';
-                break;
+               
+
+                case 'sticker':
+                     //Reply sticker
+                     $messageID=$event['message']['packageId'];
+                     $respMessage='Hello, your Sticker Package ID is ' .$messageID;
+                 break;
+                 
+                 default:
+                     $respMessage='Please send text, image,sticker only';
+                 break;
+
+
 
             }
             $httpClient=new CurlHTTPClient($channel_token);
