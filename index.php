@@ -76,7 +76,7 @@ if(!is_null($events['events'])){
 
                 case 'location':
                     //Reply location
-                    $messageID=$event['message']['latitude'];
+                    $messageID=$event['message']['addresss'];
 
                     $respMessage='Hello, your Location is ' .$messageID;
                 break;
