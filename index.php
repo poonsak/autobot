@@ -43,10 +43,11 @@ if(!is_null($events['events'])){
                     'content' => $appointments[1],
                 );
 
-                $statement=$connection->prepare("INSERT INTO appointment (time,content) VALUES(:time,:content)");
+                $statement=$connection->prepare("INSERT INTO appointments (time,content) VALUES(:time,:content)");
                 
                 $result=$statement->execute($params);
 
+                
                 $respMessage='You appointment has saved.';
             }else{
                 $respMessage='You can send appointment like this "12.00,House Keeping."';
