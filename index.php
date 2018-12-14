@@ -7,7 +7,7 @@
                 $connection=new PDO("pgsql:host=$host;dbname=$dbname",$user , $pass);
 
                    
-                $result=$connection->query("SELECT * FROM polls");
+                $result=$connection->query("SELECT * FROM appointments");
             if($result != null){
                 echo $result->rowCount();
             }
