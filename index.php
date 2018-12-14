@@ -21,7 +21,7 @@ if(!is_null($events['events'])){
        
              //Get replyToken
              $replyToken=$event['replyToken'];
-             $userId = $event['message']['text'];
+             $ask = $event['message']['text'];
              
             switch(strtolower($ask)){
 
