@@ -28,8 +28,8 @@ if(!is_null($events['events'])){
             //  $originalContentUrl = 'https://cdn.shopify.com/assets2/online-store/online_your-business-managed-small-07e0eaa8ce99bdfca24cdc84ef617ca9f15d287dd91999b6d203bc7e28af475c.jpg';
             //  $previewImageUrl = 'https://cdn.shopify.com/assets2/online-store/online_your-business-managed-small-07e0eaa8ce99bdfca24cdc84ef617ca9f15d287dd91999b6d203bc7e28af475c.jpg';
              
-            $originalContentUrl = 'picv.jpeg';
-            $previewImageUrl = 'picv.jpeg';
+            $originalContentUrl = 'https://select2web-autobot1.herokuapp.com/picv.jpeg';
+            $previewImageUrl = 'https://select2web-autobot1.herokuapp.com/picv.jpeg';
               
 
 
