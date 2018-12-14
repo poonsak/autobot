@@ -5,8 +5,7 @@ require_once('./vendor/autoload.php');
 //Namespace
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use \LINE\LINEBot;
-use \LINE\LINEBot\MessageBuilder\VideoMessageBuilder;
-// use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
+use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
 // use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
 // use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
@@ -26,14 +25,14 @@ if(!is_null($events['events'])){
              //Get replyToken
              $replyToken=$event['replyToken'];
             
-             //Video
-             $originalContentUrl='https://select2web-autobot1.herokuapp.com/videop.mp4';
-             $previewImageUrl = 'https://select2web-autobot1.herokuapp.com/picv.jpeg';
+             //Sticker
+             $packageId=2;
+             $stickerId= 40;
 
             $httpClient=new CurlHTTPClient($channel_token);
             $bot=new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             
-            $textMessageBuilder=new VideoMessageBuilder($originalContentUrl,$previewImageUrl);
+            $textMessageBuilder=new StickerMessageBuilder($packageId,$stickerId);
             $response=$bot->replyMessage($replyToken,$textMessageBuilder);          
     }
 }
