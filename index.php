@@ -31,23 +31,24 @@ if(!is_null($events['events'])){
             //Create message
             switch($event['message']['text']){
             
-                case'tel':
+                case'Tel':
                     $respMessage='089-5124512';
                 break;
 
-                case'adress':
+                case'Address':
                     $respMessage='99/526 Muag Bangkok';
                 break;
 
-                case'boss':
+                case'Boss':
                     $respMessage='089-5555555';
                 break;
 
-                case'idcard':
+                case'Idcard':
                     $respMessage='567891234';
                 break;
 
                 default:
+                $respMessage='Incorrect message to line';
                 break;
             }
 
