@@ -22,35 +22,18 @@ if(!is_null($events['events'])){
     foreach($events['events']as $event){
     
         //Line API send a lot of event type , we interested un message only.
-        if($event['type']=='message' && $event['message']['type']=='text'){
+        if($event['type']=='follow'){
 
              //Get replyToken
              $replyToken=$event['replyToken'];
             //  $userId = $event['source']['userId'];
              
-            //Create message
-            switch($event['message']['text']){
-            
-                case'tel':
-                    $respMessage='089-5124512';
-                break;
+            //creating
+            $respMessage='Thank you. I try yo be you best friend';
 
-                case'adress':
-                    $respMessage='99/526 Muag Bangkok';
-                break;
 
-                case'boss':
-                    $respMessage='089-5555555';
-                break;
 
-                case'idcard':
-                    $respMessage='567891234';
-                break;
-
-                default:
-                break;
             }
-
             $httpClient=new CurlHTTPClient($channel_token);
             $bot=new LINEBot($httpClient, array('channelSecret' => $channel_secret));
 
