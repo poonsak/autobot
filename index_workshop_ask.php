@@ -28,30 +28,29 @@ if(!is_null($events['events'])){
              $replyToken=$event['replyToken'];
             //  $userId = $event['source']['userId'];
              
-            //Split message then keep it in database.
-            $appointments = explode(',',$event['message']['text']);
+            //Create message
+            switch($event['message']['text']){
+            
+                case'Tel':
+                    $respMessage='089-5124512';
+                break;
 
-            if(count($appointments)==2){
-                $host='ec2-54-83-197-230.compute-1.amazonaws.com';
-                $dbname='dbujg2s2tqvhqf';
-                $user='egksxrkouiprpf';
-                $pass='d83d5caf218a9961c028cb9a47496c849e2479edd7003182916529828647da3a';
-                $connection=new PDO("pgsql:host=$host,dbname=$dbname",$user , $pass);
+                case'Address':
+                    $respMessage='99/526 Muag Bangkok';
+                break;
 
-                $params = array(
-                    'time' => $appointments[0],
-                    'content' => $appointments[1],
-                );
+                case'Boss':
+                    $respMessage='089-5555555';
+                break;
 
-                $statement=$connection->prepare("INSERT INTO appointment (time,content) VALUES(:time,:content)");
-                
-                $result=$statement->execute($params);
+                case'Idcard':
+                    $respMessage='567891234';
+                break;
 
-                $respMessage='You appointment has saved.';
-            }else{
-                $respMessage='You can send appointment like this "12.00,House Keeping."';
+                default:
+                $respMessage='Incorrect message to line';
+                break;
             }
-
 
             $httpClient=new CurlHTTPClient($channel_token);
             $bot=new LINEBot($httpClient, array('channelSecret' => $channel_secret));
