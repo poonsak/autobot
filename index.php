@@ -26,7 +26,7 @@ if(!is_null($events['events'])){
              $replyToken=$event['replyToken'];
             
              //Sticker
-             $count = 0;
+            //  $count = 0;
              $packageId=2;
              $stickerId=+ $count + 40;
 
