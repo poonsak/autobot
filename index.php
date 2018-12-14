@@ -25,8 +25,8 @@ if(!is_null($events['events'])){
              $replyToken=$event['replyToken'];
             
              //Image
-             $originalContentUrl = 'https://i0.wp.com/photoschoolthailand.com/wp-content/uploads/2018/02/raw-vs-jpeg-e1519099042836.jpg?w=1392&ssl=1';
-             $$previewImageUrl = 'https://i0.wp.com/photoschoolthailand.com/wp-content/uploads/2018/02/raw-vs-jpeg-e1519099042836.jpg?w=1392&ssl=1';
+             $originalContentUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/JPS-sample.jpg/220px-JPS-sample.jpg';
+             $$previewImageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/JPS-sample.jpg/220px-JPS-sample.jpg';
              //$previewImageUrl = 'https://cdn.shopify.com/files/1/1217/6360/products/shinkansen_Tokaido_ShinFuji_001_le44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827';
              
              
