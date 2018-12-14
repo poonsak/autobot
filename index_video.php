@@ -5,8 +5,7 @@ require_once('./vendor/autoload.php');
 //Namespace
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use \LINE\LINEBot;
-use \LINE\LINEBot\MessageBuilder\LocationMessageBuilder;
-// use \LINE\LINEBot\MessageBuilder\VideoMessageBuilder;
+use \LINE\LINEBot\MessageBuilder\VideoMessageBuilder;
 // use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
 // use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
 // use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
@@ -27,12 +26,10 @@ if(!is_null($events['events'])){
              //Get replyToken
              $replyToken=$event['replyToken'];
             
-             //Location
-             $title = 'My here';
-             $address = 'My Fitness';
-             $latitude='13.7743425';
-             $longitude='100.5680782';
-             
+             //Video
+             $originalContentUrl='https://select2web-autobot1.herokuapp.com/videop.mp4';
+             $previewImageUrl = 'https://select2web-autobot1.herokuapp.com/picv.jpeg';
+
             $httpClient=new CurlHTTPClient($channel_token);
             $bot=new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             
