@@ -36,7 +36,7 @@ if(!is_null($events['events'])){
                 $dbname='dbujg2s2tqvhqf';
                 $user='egksxrkouiprpf';
                 $pass='d83d5caf218a9961c028cb9a47496c849e2479edd7003182916529828647da3a';
-                $connection=new PDO("pgsql:host=$host,dbname=$dbname",$user , $pass);
+                $connection=new PDO("pgsql:host=$host;dbname=$dbname",$user , $pass);
 
                 $params = array(
                     'time' => $appointments[0],
