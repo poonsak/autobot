@@ -16,24 +16,32 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 
 if(!is_null($events['events'])){
-    
     //Loop through each event
     foreach($events['events']as $event){
        
              //Get replyToken
              $replyToken=$event['replyToken'];
+             $ask = $event['message']['text'];
+             
+            switch(strtolower($ask)){
+
+                case 'm':
+                    $respMessage='What sup man.Go away!';                                      
+                break;
+                
+                case 'f':
+                    $respMessage='Love you lady.';                                      
+                break;
             
-             //Image
-             $originalContentUrl = 'https://cdn.shopify.com/files/1/1217/6360/products/shinkansen_Tokaido_ShinFuji_001_le44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827';
-             
-             $previewImageUrl = 'https://cdn.shopify.com/files/1/1217/6360/products/shinkansen_Tokaido_ShinFuji_001_le44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827';
-             
-             
+                default:
+                    $respMessage='What is you sex? M or F';                                      
+                break;
+            }
 
             $httpClient=new CurlHTTPClient($channel_token);
             $bot=new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             
-            $textMessageBuilder=new ImageMessageBuilder($originalContentUrl,$previewImageUrl);
+            $textMessageBuilder=new TextMessageBuilder($respMessage);
             $response=$bot->replyMessage($replyToken,$textMessageBuilder);
             
         
